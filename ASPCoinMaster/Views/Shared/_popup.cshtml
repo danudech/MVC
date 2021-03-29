@@ -5,11 +5,11 @@
             <input type="password" placeholder="Password" ng-model="SignPass">
             <input type="password" placeholder="Re-Password" ng-model="SignRepass">
             <small class="form-text text-alert" ng-show="(SignPass != SignRepass) ? true:false">Passwords is'n match.</small>
-            <input type="email" placeholder="email@example.com" ng-model="SignEmail">
-            <small class="form-text text-alert" ng-show="(SignEmail == null) ? true:false">email@example.com</small>
+            <input type="email" placeholder="email@example.com" ng-model="SignEmail" ng-change="checkmail(SignEmail)" ng-click="checkmail(SignEmail)">
+            <small class="form-text text-alert" ng-show="chkmail">email@example.com</small>
             <input type="text" placeholder="Referrals" ng-model="refer">
         </form>
-        <input type="button" ng-disabled="(SignUser == null || SignPass == null || SignPass != SignRepass || SignEmail == null)? true : false" class="btn btn-info btn-lg" value="Confirm" ng-click="(signup(SignUser,SignPass,SignRepass,SignEmail,refer))" />
+        <input type="button" ng-disabled="(SignUser == null || SignPass == null || SignPass != SignRepass || SignEmail == null)? true : false" class="btn btn-info btn-lg" value="Confirm" ng-click="(signup(SignUser,SignPass,SignEmail,refer))" />
         <input type="button" class="btn btn-danger btn-lg" ng-click="link()" value="Back" />
     </div>
 </div>

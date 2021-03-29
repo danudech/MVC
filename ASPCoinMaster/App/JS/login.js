@@ -2,6 +2,7 @@
     function indexMaste($scope, $http,$window) {
         $scope.signup = false;
         $scope.login = true;
+
         $scope.login = function (user, pass) {
             console.log(user);
             console.log(pass);
@@ -14,7 +15,6 @@
                 dataType: "json"
             }).then(function (response) {
                 $scope.process = response.data.titlelogin;
-                console.log(response.data.titlelogin);
                 //$scope.varModules = response.data.Modules;
             });
         }
@@ -32,10 +32,9 @@
             
         }
 
-        $scope.signup = function (SignUser, SignPass, SignRepass, SignEmail, refer) {
-            if (SignPass != SignRepass) {
-                console.log("OK Log");
-            }
+        $scope.signup = function (SignUser, SignPass, SignEmail, refer) {
+            $scope.show = false;
+            $scope.loading = true;
             $http({
                 method: "post",
                 url: 'master/signup',
@@ -47,15 +46,28 @@
                 },
                 dataType: "json",
             }).then(function (response) {
-                console.log(response.data.val);
+                if (response.data.val == "User is Avalible") {
+                    $scope.loading = false;
+                    $scope.login = true;
+                } else {
+                    $scope.loading = false;
+                    $scope.show = true;
+                }
             });;
         }
 
-        $scope.submitForm = function () {
-            if (event.keyCode == 13) {
-                console.log("OK Guy!!");
-                window.event.keyCode = 9;
-            }
+        //$scope.submitForm = function () {
+        //    if (event.keyCode == 13) {
+        //        console.log("OK Guy!!");
+        //        window.event.keyCode = 9;
+        //    }
             //alert('The form has been submitted !');
-        };
+        //};
+        $scope.checkmail = function (SignEmail) {
+            $scope.chkmail = true;
+            if (SignEmail != null) {
+                $scope.chkmail = false;
+            }
+        }
+            
     });

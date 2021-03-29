@@ -93,6 +93,7 @@
   <ItemGroup>
     <Content Include="App\Css\bootstrap.css" />
     <Content Include="App\Css\bootstrap.min.css" />
+    <Content Include="App\Css\CSSLoading.css" />
     <Content Include="App\Css\login.css" />
     <Content Include="App\Css\Site.css" />
     <Content Include="App\Css\style.css" />
@@ -104,6 +105,7 @@
     <Content Include="App\Css\_bootstrap.css" />
     <Content Include="App\Script\bootstrap.js" />
     <Content Include="App\Script\jquery-1.10.2.js" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="favicon.ico" />
     <Content Include="Web.config" />
@@ -145,6 +147,7 @@
     <Content Include="Views\Shared\UI.cshtml" />
     <Content Include="Views\Master\Signup.cshtml" />
     <Content Include="Views\Shared\_popup.cshtml" />
+    <Content Include="Views\Shared\_loading.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
