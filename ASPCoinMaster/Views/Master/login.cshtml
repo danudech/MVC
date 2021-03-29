@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html ng-app="AppMaster" lang="en-us">
+    @Html.Partial("_Header")
+<body ng-controller="LoginMaste">
+    <div class="wrapper" ng-init="init()" ng-show="login">
+        <div class="container">
+            <span class="txtheader">
+                <span class="cointxt">Co</span>in<span class="cointxt">Ma</span>ster
+            </span>
+            <form class="form">
+                <input type="text" placeholder="Username" ng-model="user" required>
+                <input type="password" placeholder="Password" ng-model="pass" required>
+                <input type="button" id="login-button" class="btn-check" value="Sign in" />
+                <span a class="newuser" ng-click="(link('ToCreate'))">Create account</span>
+            </form>
+        </div>
+    </div>
+    @Html.Partial("_popup")
+    @Html.Partial("UI")
+    @Html.Partial("_Footer")
+    <script src="~/App/JS/login.js"></script>
+</body>
+</html>

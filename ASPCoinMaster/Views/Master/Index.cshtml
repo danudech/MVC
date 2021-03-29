@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="AppMaster" lang="en-us">
+@Html.Partial("_Header")
+<body ng-controller="indexMaste">
+    @Html.Partial("_Headbox")
+    @Html.Partial("_Leftbox")
+    <br />
+    <div class="container">
+        <div class="card" ng-init="init()">
+            <div class="card-body">
+                <h4 class="card-title">{{Title}}</h4>
+                <h6 class="card-subtitle mb-2 text-muted">{{Subtitle}}</h6>
+                <p class="card-text">{{textshow}}</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_Rightbox")
+    @Html.Partial("_Footer")
+    @Html.Partial("UI")
+    <script src="~/App/JS/IndexMaster.js"></script>
+</body>
+</html>

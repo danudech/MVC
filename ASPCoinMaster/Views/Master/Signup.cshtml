@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html ng-app="AppMaster" lang="en-us">
+@Html.Partial("_Header")
+<body ng-controller="LoginMaste">
+    <div class="wrapper">
+        <div class="container">
+            <form class="form">
+                <input type="text" placeholder="Username" ng-model="user" required>
+                <input type="password" placeholder="Password" ng-model="pass" required>
+                <input type="password" placeholder="Re-Enter Password" ng-model="Repass" required>
+                <input type="text" placeholder="Coin Adress" ng-model="Coin" required>
+
+                <input type="button" id="login-button" class="btn-check" value="Sign up" />
+                <span class="newuser" >Sign in</span>
+
+            </form>
+        </div>
+    </div>
+    @Html.Partial("UI")
+    @Html.Partial("_Footer")
+    <script src="~/App/JS/login.js"></script>
+</body>
+</html>
