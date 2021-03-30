@@ -122,6 +122,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\MasterModels.cs" />
+    <Compile Include="Models\sentEmail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,7 +147,7 @@
     <Content Include="Views\Master\login.cshtml" />
     <Content Include="Views\Shared\UI.cshtml" />
     <Content Include="Views\Master\Signup.cshtml" />
-    <Content Include="Views\Shared\_popup.cshtml" />
+    <Content Include="Views\Shared\_Signup.cshtml" />
     <Content Include="Views\Shared\_loading.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

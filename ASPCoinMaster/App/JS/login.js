@@ -8,7 +8,11 @@
             console.log(pass);
         }
 
-        $scope.init = function () {
+        $scope.init = function (refer) {
+            console.log(refer.length);
+            if (refer.length > 0) {
+                $scope.link('ToCreate',refer);
+            }
             $http({
                 method: "POST",
                 url: '/Master/Getdatalogin',
@@ -19,11 +23,12 @@
             });
         }
 
-        $scope.link = function (link) {
+        $scope.link = function (link, refer) {
             console.log(link);
             if (link == 'ToCreate') {
                 $scope.show = true;
                 $scope.login = false;
+                $scope.refer = refer;
                 //$window.location.href = '/Master/Signup'
             } else {
                 $scope.login = true;
@@ -49,11 +54,12 @@
                 if (response.data.val == "User is Avalible") {
                     $scope.loading = false;
                     $scope.login = true;
+                    $scope.sentmail(SignEmail);
                 } else {
                     $scope.loading = false;
                     $scope.show = true;
                 }
-            });;
+            });
         }
 
         //$scope.submitForm = function () {
@@ -68,6 +74,21 @@
             if (SignEmail != null) {
                 $scope.chkmail = false;
             }
+        }
+
+        $scope.sentmail = function (SignEmail) {
+            $http({
+                method: "POST",
+                url: "/Master/SendEmail",
+                data: {
+                    to: SignEmail,
+                    body: "Test Sent Form MVC By AngularJS",
+                    subject: "Test Sent Form MVC"
+                },
+                dataType: "Json"
+            }).then(function (respons) {
+                console.log(respons.data);
+            });
         }
             
     });
